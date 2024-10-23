@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 cron: 0 10 0 * * *
-new Env('ICC2022');
+new Env('HDFANS');
 """
 
 import json
@@ -21,10 +21,10 @@ def start(cookie):
     while retries < max_retries:
         try:
             msg += "第{}次执行签到\n".format(str(retries+1))
-            sign_in_url = "https://www.icc2022.com/attendance.php"
+            sign_in_url = "https://hdfans.org/attendance.php"
             headers = {
                 'Cookie': cookie,
-                'authority': 'www.icc2022.com',
+                'authority': 'hdfans.org',
                 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
                 'accept-language': 'zh-CN,zh;q=0.9,und;q=0.8',
                 'referer': 'https://www.icc2022.com/attendance.php',
@@ -69,11 +69,11 @@ def start(cookie):
             
             if success:
                 print("签到结果: ",msg)
-                send("ICC2022 签到结果", msg)
+                send("HDFans 签到结果", msg)
                 break  # 成功执行签到，跳出循环
             elif retries >= max_retries:
                 print("达到最大重试次数，签到失败。")
-                send("ICC2022 签到结果", msg)
+                send("HDFans 签到结果", msg)
                 break
             else:
                 retries += 1
@@ -81,7 +81,7 @@ def start(cookie):
                 time.sleep(20)
         except Exception as e:
             print("签到失败，失败原因:"+str(e))
-            send("ICC2022 签到结果", str(e))
+            send("HDFans 签到结果", str(e))
             retries += 1
             if retries >= max_retries:
                 print("达到最大重试次数，签到失败。")
@@ -91,5 +91,5 @@ def start(cookie):
                 time.sleep(20)
 
 if __name__ == "__main__":
-    cookie = os.getenv("ICC2022_COOKIE")
+    cookie = os.getenv("HDFANS_COOKIE")
     start(cookie)
