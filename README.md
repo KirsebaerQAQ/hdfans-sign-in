@@ -1,18 +1,19 @@
-# icc2022-sign-in
+# HDFans-sign-in
 
-> PT 站 ICC2022 自动签到脚本
+> PT 站 HDFans 自动签到脚本
 
 > 📌📌📌申明：我自己就是该站的用户，之前每天都会登录该站去签到，单纯为了签到方便，如果对网站的正常运营有影响，请联系，我会立刻删除。重申，单纯为了方便，无意冒犯🫶
 
+> 项目源自https://github.com/KunCheng-He/icc2022-sign-in
 ## 使用
 
 ```
-ql repo https://github.com/KunCheng-He/icc2022-sign-in.git "icc2022.py" "" "sendNotify"
+ql repo https://github.com/KirsebaerQAQ/hdfans-sign-in.git "hdfans.py" "" "sendNotify"
 ```
 
 ![添加订阅](https://github.com/KunCheng-He/icc2022-sign-in/assets/48958733/8628f8f8-cbcd-4de3-ac9f-80e228f7387f)
 
-青龙面板新增环境变量 `ICC2022_COOKIE`
+青龙面板新增环境变量 `HDFANS_COOKIE`
 
 ![新增环境变量](https://github.com/KunCheng-He/icc2022-sign-in/assets/48958733/aa75f0e5-b46d-44de-b3e5-c9c88c32e80d)
 
